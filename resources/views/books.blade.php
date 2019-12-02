@@ -18,22 +18,22 @@
                 
                 <div class="col-sm-6">
                     <label for="book" class="col-sm-3 control-label">本</label>
-                    <input type="text" name="item_name" id="book-name" class="form-control">
+                    <input type="text" name="item_name" id="book-name" class="form-control" value="{{old('item_name')}}">
                 </div>
                 
                 <div class="col-sm-6">
                     <label for="amount" class="col-sm-3 control-label">金額</label>
-                    <input type="text" name="item_amount" id="book-amount" class="form-control">
+                    <input type="text" name="item_amount" id="book-amount" class="form-control" value="{{old('item_amount')}}">
                 </div>
                 
                 <div class="col-sm-6">
                     <label for="number" class="col-sm-3 control-label">数</label>
-                    <input type="text" name="item_number" id="book-number" class="form-control">
+                    <input type="text" name="item_number" id="book-number" class="form-control" value="{{old('item_number')}}">
                 </div>
                 
                   <div class="col-sm-6">
                     <label for="published" class="col-sm-3 control-label">公開日</label>
-                    <input type="date" name="published" id="book-published" class="form-control">
+                    <input type="date" name="published" id="book-published" class="form-control" value="{{old('published')}}">
                 </div>    
                 
             </div>

@@ -12,6 +12,7 @@
 use App\Book;
 use Illuminate\Http\Request; 
 
+
 /**
 * 本のダッシュボード表示 */
 Route::get('/', 'BookController@index');
@@ -34,5 +35,7 @@ Route::delete('/book/{book}', 'BookController@destroy');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/logout', 'HomeController@logout');
+
 ?>
 
