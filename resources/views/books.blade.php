@@ -17,13 +17,13 @@
             <div class="form-group">
                 
                 <div class="col-sm-6">
-                    <label for="book" class="col-sm-3 control-label">本</label>
+                    <label for="book" class="col-sm-3 control-label">買うもの</label>
                     <input type="text" name="item_name" id="book-name" class="form-control" value="{{old('item_name')}}">
                 </div>
                 
                 <div class="col-sm-6">
                     <label for="amount" class="col-sm-3 control-label">金額</label>
-                    <input type="text" name="item_amount" id="book-amount" class="form-control" value="{{old('item_amount')}}">
+                    <input type="text " name="item_amount" id="book-amount" class="form-control" value="{{old('item_amount')}}">
                 </div>
                 
                 <div class="col-sm-6">
@@ -32,7 +32,7 @@
                 </div>
                 
                   <div class="col-sm-6">
-                    <label for="published" class="col-sm-3 control-label">公開日</label>
+                    <label for="published" class="col-sm-3 control-label">期限</label>
                     <input type="date" name="published" id="book-published" class="form-control" value="{{old('published')}}">
                 </div>    
                 

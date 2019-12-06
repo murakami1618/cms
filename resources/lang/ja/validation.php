@@ -113,7 +113,11 @@ return [
     */
 
     'attributes' => [
-        'item name' => '本',
+        "item_name" => "買うもの",
+        "item_number" => "金額",
+        "item_amount" => "数",
+        "published" => "期限",
+        
     ],
 
 ];

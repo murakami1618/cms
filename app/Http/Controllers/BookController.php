@@ -8,10 +8,16 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
+use Illuminate\Support\Facades\Auth;
 
 class BookController extends Controller
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 
     public function update(Request $request)
     {
@@ -57,18 +63,24 @@ class BookController extends Controller
                     ->withErrors($validator);
         }
         // Eloquent モデル
+        
         $books = new Book;
+       
         $books->item_name =    $request->item_name;
         $books->item_number =  $request->item_number;
         $books->item_amount =  $request->item_amount;
         $books->published =    $request->published;
+        $books->user_id =   Auth::id();
         $books->save();   //「/」ルートにリダイレクト 
         return redirect('/');
     }
     public function index()
     {
 
-        $books = Book::orderBy('created_at', 'asc')->paginate(3);
+        
+        $user_id = Auth::id();
+        $books = Book::where('user_id', $user_id)->paginate(2);
+        
         return view('books', [
             'books' => $books
         ]);
