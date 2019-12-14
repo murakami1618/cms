@@ -67,6 +67,9 @@
                             </div>
                         </div>
                     </form>
+                    <a class="btn btn-link pull-right" href="{{ url('/') }}">
+                <i class="glyphicon glyphicon-backward"></i>  Back
+            </a>
                 </div>
             </div>
         </div>

@@ -55,12 +55,12 @@
                                     {{ __('ログイン') }}
                                 </button>
 
-                                @if (Route::has('password.request'))
+                                <!-- @if (Route::has('password.request'))
                                     <a class="btn btn-link" href="{{ route('password.request') }}">
                                         {{ __('パスワードをお忘れですか？') }}
                                     </a>
-                                @endif
-                                <a href="{{ url('register') }}" method="get">新規登録</a>
+                                @endif -->
+                                <a href="{{ url('register') }}" method="get">　　新規登録</a>
                             </div>
                         </div>
                     </form>

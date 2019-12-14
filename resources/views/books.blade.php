@@ -2,13 +2,13 @@
 
 @section('content')
 
+
     <!-- Bootstrapの定形コード… -->
     <div class="panel-body">
         <!-- バリデーションエラーの表示 -->
         @include('common.errors')
         <!-- バリデーションエラーの表示 -->
-
-        <!-- 本登録フォーム -->
+        <!-- 本登録フォーム -->        
         <form action="{{ url('books') }}" method="POST" class="form-horizontal">
             
             {{ csrf_field() }}
@@ -23,12 +23,12 @@
                 
                 <div class="col-sm-6">
                     <label for="amount" class="col-sm-3 control-label">金額</label>
-                    <input type="text " name="item_amount" id="book-amount" class="form-control" value="{{old('item_amount')}}">
+                    <input type="number" name="item_amount" id="book-amount" class="form-control" value="{{old('item_amount')}}">
                 </div>
                 
                 <div class="col-sm-6">
                     <label for="number" class="col-sm-3 control-label">数</label>
-                    <input type="text" name="item_number" id="book-number" class="form-control" value="{{old('item_number')}}">
+                    <input type="number" name="item_number" id="book-number" class="form-control" value="{{old('item_number')}}">
                 </div>
                 
                   <div class="col-sm-6">
@@ -40,10 +40,11 @@
 
             <!-- 本 登録ボタン -->
             <div class="form-group">
-                <div class="col-sm-offset-3 col-sm-6">
+                <div class="col-sm-offset-5 col-sm-10 ">
                     <button type="submit" class="btn btn-default">
                         <i class="glyphicon glyphicon-plus" aria-hidden="true"></i> 追加
                     </button>
+                    <a href="{{ url('logout') }}" type="submit" class="btn btn-default" method="get">ログアウト</a>
                 </div>
             </div>
         </form>
@@ -121,6 +122,7 @@
             </div>
         </div>
     @endif
+    
     <!-- Book: 既に登録されてる本のリスト -->
     
         </div>

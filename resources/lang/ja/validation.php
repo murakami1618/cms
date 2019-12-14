@@ -114,8 +114,8 @@ return [
 
     'attributes' => [
         "item_name" => "買うもの",
-        "item_number" => "金額",
-        "item_amount" => "数",
+        "item_amount" => "金額",
+        "item_number" => "数",
         "published" => "期限",
         
     ],

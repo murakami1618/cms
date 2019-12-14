@@ -24,8 +24,8 @@ class BookController extends Controller
             //バリデーション
             $validator = Validator::make($request->all(), [
                 'id' => 'required',
-                'item_name' => 'required|min:3|max:255',
-                'item_number' => 'required|min:1|max:3',
+                'item_name' => 'required|min:1|max:255',
+                'item_number' => 'required|min:1|max:7',
                 'item_amount' => 'required|max:6',
                 'published' => 'required',
         ]);
@@ -49,21 +49,20 @@ class BookController extends Controller
 
     public function store(Request $request)
     {
-                    //バリデーション
-            $validator = Validator::make($request->all(), [
-                'item_name' => 'required|min:3|max:255',
-                'item_number' => 'required | min:1 | max:3',
-                'item_amount' => 'required | max:6',
-                'published'   => 'required',
+        //バリデーション
+        $validator = Validator::make($request->all(), [
+            'item_name' => 'required|min:1|max:255',
+            'item_number' => 'required | min:1 | max:7',
+            'item_amount' => 'required | max:6',
+            'published'   => 'required',
         ]);
         //バリデーション:エラー
         if ($validator->fails()) {
-                return redirect('/')
-                    ->withInput()
-                    ->withErrors($validator);
+            return redirect('/')
+                ->withInput()
+                ->withErrors($validator);
         }
         // Eloquent モデル
-        
         $books = new Book;
        
         $books->item_name =    $request->item_name;
@@ -71,20 +70,19 @@ class BookController extends Controller
         $books->item_amount =  $request->item_amount;
         $books->published =    $request->published;
         $books->user_id =   Auth::id();
-        $books->save();   //「/」ルートにリダイレクト 
+        $books->save();   
+        //「/」ルートにリダイレクト 
         return redirect('/');
     }
     public function index()
     {
-
-        
         $user_id = Auth::id();
-        $books = Book::where('user_id', $user_id)->paginate(2);
-        
+        $books = Book::where('user_id', $user_id)->paginate(5);
         return view('books', [
             'books' => $books
         ]);
     }
+
     public function edit(Book $books){
             //{books}id 値を取得 => Book $books id 値の1レコード取得
     return view('booksedit', [
