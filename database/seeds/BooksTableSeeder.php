@@ -17,24 +17,28 @@ class BooksTableSeeder extends Seeder
               'item_number' => 1,
               'item_amount' => 1,
               'publihed' => '2019-01-01 00:00:00',
+              'user_id' => '3',
             ],
             [
                 'item_name' => 'ブック2',
                 'item_number' => 2,
                 'item_amount' => 20,
                 'publihed' => '2019-01-01 00:00:00',
+                'user_id' => '3',
               ],
               [
                 'item_name' => 'ブック3',
                 'item_number' => 3,
                 'item_amount' => 300,
                 'publihed' => '2019-01-01 00:00:00',
+                'user_id' => '2',
               ],
               [
                 'item_name' => 'ブック4',
                 'item_number' => 4,
                 'item_amount' => 4000,
                 'publihed' => '2019-01-01 00:00:00',
+                'user_id' => '2',
               ],
           ]); 
     }
