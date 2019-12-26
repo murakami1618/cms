@@ -63,10 +63,10 @@
 
                     <!-- テーブルヘッダ -->
                     <thead>
-                        <th>本</th>
+                        <th>買うもの</th>
                         <th>金額</th>
                         <th>数</th>
-                        <th>公開日</th>
+                        <th>期限</th>
                         <th>&nbsp;</th>
                     </thead>
 
@@ -93,7 +93,7 @@
                                     <form action="{{ url('booksedit/'.$book->id) }}" method="POST">
                                         {{ csrf_field() }}
                                         <button type="submit" class="btn btn-primary">
-                                            <i class="glyphicon glyphicon-pencil"></i> 更新
+                                            <i class="glyphicon glyphicon-pencil"></i> 編集
                                         </button>
                                     </form>
                                 </td>
