@@ -12,7 +12,7 @@
         <form action="{{ url('books') }}" method="POST" class="form-horizontal">
             
             {{ csrf_field() }}
-
+    <p class="text-center h1">ようこそ{{ $name }}さん</p>
             <!-- 本のタイトル -->
             <div class="form-group">
                 
@@ -55,7 +55,7 @@
     @if (count($books) > 0)
         <div class="panel panel-default">
             <div class="panel-heading">
-                現在の本
+                {{$name}}さんの買うものリスト
             </div>
 
             <div class="panel-body">

@@ -76,10 +76,12 @@ class BookController extends Controller
     }
     public function index()
     {
+        $name = Auth::user()->name;
         $user_id = Auth::id();
         $books = Book::where('user_id', $user_id)->paginate(5);
         return view('books', [
-            'books' => $books
+            'books' => $books,
+            'name' => $name
         ]);
     }
 
