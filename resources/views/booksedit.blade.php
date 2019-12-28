@@ -16,14 +16,14 @@
         <!-- item_number -->
         <div class="form-group">
            <label for="item_number">金額</label>
-        <input type="text" id="item_number" name="item_number" class="form-control" required='required' value="{{$book->item_number}}">
+        <input type="number" id="item_number" name="item_number" class="form-control" required='required' value="{{$book->item_number}}">
         </div>
         <!--/ item_number -->
 
         <!-- item_amount -->
         <div class="form-group">
            <label for="item_amount">数</label>
-        <input type="text" id="item_amount" name="item_amount" class="form-control" required='required' value="{{$book->item_amount}}">
+        <input type="number" id="item_amount" name="item_amount" class="form-control" required='required' value="{{$book->item_amount}}">
         </div>
         <!--/ item_amount -->
         

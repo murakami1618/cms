@@ -104,7 +104,7 @@
                                         {{ csrf_field() }}
                                         {{ method_field('DELETE') }}
                                         <button type="submit" class="btn btn-danger">
-                                            <i class="glyphicon glyphicon-trash"></i> 削除
+                                            <i class="glyphicon glyphicon-trash"></i> 済み
                                         </button>
                                     </form>
                                 </td>
